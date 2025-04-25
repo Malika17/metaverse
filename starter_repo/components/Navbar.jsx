@@ -1,9 +1,9 @@
-'use client';
+// 'use client';
 
-const Navbar = () => (
-  <nav>
-    navbar
-  </nav>
-);
+// const Navbar = () => (
+//   <nav>
+//     navbar
+//   </nav>
+// );
 
-export default Navbar;
+// export default Navbar;

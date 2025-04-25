@@ -1,12 +1,11 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-
-import styles from '../styles';
-import { slideIn, staggerContainer, textVariant } from '../utils/motion';
+import { motion } from "framer-motion";
+import styles from "../styles";
+import { slideIn, staggerContainer } from "../utils/motion";
 
 const Hero = () => (
-  <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
+  <section className={`${styles.yPaddings} ${styles.heroGradient}`}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -14,41 +13,34 @@ const Hero = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
-      <div className="flex justify-center items-center flex-col relative z-10">
-        <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
-          Metaverse
-        </motion.h1>
-        <motion.div
-          variants={textVariant(1.2)}
-          className="flex flex-row justify-center items-center"
-        >
-          <h1 className={styles.heroHeading}>Ma</h1>
-          <div className={styles.heroDText} />
-          <h1 className={styles.heroHeading}>Ness</h1>
-        </motion.div>
-      </div>
-
       <motion.div
-        variants={slideIn('right', 'tween', 0.2, 1)}
-        className="relative w-full md:-mt-[20px] -mt-[12px]"
+        variants={slideIn("right", "tween", 0.2, 1)}
+        className="relative w-full flex flex-col md:flex-row items-center justify-between gap-8"
       >
-        <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] -top-[30px]" />
+        {/* Text Section */}
+        <div className="flex-2 text-center md:text-left px-2 sm:mt-[-190px]">
+          <h1 className="font-Poppins tracking-tighter font-medium text-4xl sm:text-6xl mb-1 p-2">
+            Post like Instagram,
+          </h1>
+          <h1 className="font-Poppins tracking-tighter font-medium text-4xl sm:text-6xl mb-1 p-2">
+            Sell like a Marketplace.
+          </h1>
+          <p className="font-Poppins text-[14px] sm:text-[20px] text-gray-800 m-1 p-2">
+            A content-driven marketplace for brands to engage and drive sales.
+          </p>
+          <button className="font-[Poppins] mt-3 bg-black text-white px-8 py-3 rounded-full text-lg hover:scale-105 hover:bg-black transition-transform duration-300 ease-in-out">
+            Join as a Seller
+          </button>
+        </div>
 
-        <img
-          src="/cover.png"
-          alt="hero_cover"
-          className="w-full sm:h-[500px] h-[350px] object-cover rounded-tl-[140px] z-10 relative"
-        />
-
-        <a href="#explore">
-          <div className="w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10">
-            <img
-              src="/stamp.png"
-              alt="stamp"
-              className="sm:w-[155px] w-[100px] sm:h-[155px] h-[100px] object-contain"
-            />
-          </div>
-        </a>
+        {/* Image Section */}
+        <div className="flex-1 flex justify-center ">
+          <img
+            src="heroui.png"
+            alt="App Screenshot"
+            className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto md:max-h-[550px] lg:max-h-[650px] object-contain"
+          />
+        </div>
       </motion.div>
     </motion.div>
   </section>
