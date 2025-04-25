@@ -4,7 +4,7 @@ import StartSteps from "./StartSteps";
 import NewFeatures from "./NewFeatures";
 import InsightCard from "./InsightCard";
 import Footer from "./Footer";
-import Navbar from "../components/Navbar";
+import Navbar from "./Navbar";
 
 export {
   Navbar,
