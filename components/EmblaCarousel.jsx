@@ -98,19 +98,17 @@ const EmblaCarousel = ({ slides, options }) => {
         <div className="flex">
           {slides.map((slide, index) => (
             <div
-              className="embla__slide min-w-0 flex-[0_0_100%] flex justify-center items-center px-4"
+              className="embla__slide min-w-0 flex-[0_0_100%] flex justify-center items-center px-1"
               key={index}
             >
-              <div className="embla__slide__tween transition-transform duration-[900ms] ease-out flex items-center justify-center w-full max-w-6xl gap-8 px-6">
-                {/* Left Feature Text */}
-                <div className="w-1/4 text-right pr-4 hidden md:block">
-                  <p className="text-xl font-semibold text-gray-800 leading-snug">
-                    {slide.leftText}
-                  </p>
-                </div>
+              <div className="embla__slide__tween transition-transform duration-[900ms] ease-out flex flex-col md:flex-row items-center justify-center w-full max-w-[90rem] gap-6 px-4 text-center">
+                {/* Mobile Heading (Above Image) */}
+                <p className="block md:hidden text-xl font-semibold text-black font-poppins leading-snug">
+                  {slide.leftText}
+                </p>
 
                 {/* Phone Image */}
-                <div className="w-[70vw] max-w-[400px] aspect-[9/16] overflow-hidden rounded-2xl bg-white ">
+                <div className="w-[70vw] max-w-[300px] md:max-w-[400px] aspect-[9/16] overflow-hidden rounded-2xl bg-white">
                   <img
                     src={slide.imageSrc}
                     alt={`Slide ${index + 1}`}
@@ -118,12 +116,20 @@ const EmblaCarousel = ({ slides, options }) => {
                   />
                 </div>
 
-                {/* Right Feature Text */}
-                <div className="w-1/4 text-left pl-4 hidden md:block">
-                  <p className="text-xl font-semibold text-gray-800 leading-snug">
+                {/* Desktop Text Block */}
+                <div className="hidden md:flex flex-col w-1/2 text-left pl-4">
+                  <p className="text-2xl md:text-5xl font-semibold text-black font-poppins leading-tight">
+                    {slide.leftText}
+                  </p>
+                  <p className="text-xl md:text-3xl font-normal text-black font-poppins leading-snug mt-2">
                     {slide.rightText}
                   </p>
                 </div>
+
+                {/* Mobile Caption (Below Image) */}
+                <p className="block md:hidden text-lg text-black font-poppins leading-snug">
+                  {slide.rightText}
+                </p>
               </div>
             </div>
           ))}
