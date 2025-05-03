@@ -137,7 +137,7 @@ const EmblaCarousel = ({ slides, options }) => {
       </div>
 
       {/* Prev/Next Buttons */}
-      <div className="absolute top-3/4 left-0 right-0 px-12 flex justify-between items-center transform -translate-y-1/2 z-10">
+      <div className="absolute top-[35vh] sm:top-3/4 left-0 right-0 sm:px-12 px-3 flex justify-between items-center transform -translate-y-1/2 z-10">
         <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
         <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
       </div>
