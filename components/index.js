@@ -5,9 +5,11 @@ import NewFeatures from "./NewFeatures";
 import InsightCard from "./InsightCard";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import EmblaCarousel from "./EmblaCarousel";
 
 export {
   Navbar,
+  EmblaCarousel,
   TitleText,
   TypingText,
   StartSteps,

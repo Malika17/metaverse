@@ -1,11 +1,16 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-import styles from '../styles';
-import { startingFeatures } from '../constants';
-import { StartSteps, TitleText, TypingText } from '../components';
-import { staggerContainer, fadeIn, planetVariants } from '../utils/motion';
+import styles from "../styles";
+import { StartSteps, TitleText, TypingText } from "../components";
+import { staggerContainer, fadeIn, planetVariants } from "../utils/motion";
+
+const sellerFeatures = [
+  "Zero commission for early sellers — keep 100% of what you earn.",
+  "Share your story, market your products, and build trust with customers through your brand page and content.",
+  "Reach more customers with secure payments, better visibility, and higher conversion rates on a trusted marketplace.",
+];
 
 const GetStarted = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -17,26 +22,27 @@ const GetStarted = () => (
       className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-8`}
     >
       <motion.div
-        variants={planetVariants('left')}
+        variants={planetVariants("left")}
         className={`flex-1 ${styles.flexCenter}`}
       >
         <img
-          src="/get-started.png"
+          src="/whySell.png"
           alt="get-started"
           className="w-[90%] h-[90%] object-contain"
         />
       </motion.div>
+
       <motion.div
-        variants={fadeIn('left', 'tween', 0.2, 1)}
-        className="flex-[0.75] flex justify-center flex-col"
+        variants={fadeIn("left", "tween", 0.2, 1)}
+        className=" flex-[0.75] flex justify-center text-center flex-col text-black"
       >
-        <TypingText title="| How Metaversus Works" />
-        <TitleText title={<>Get started with just a few clicks</>} />
-        <div className="mt-[31px] flex flex-col max-w-[370px] gap-[24px]">
-          {startingFeatures.map((feature, index) => (
+        <TypingText title="| Why Sell on Lore?" />
+        {/* <TitleText title={<>Get Started in Just a Few Steps</>} /> */}
+        <div className="mt-[31px] flex flex-col max-w-[700px] gap-[24px]">
+          {sellerFeatures.map((feature, index) => (
             <StartSteps
               key={feature}
-              number={`${index < 10 ? '0' : ''} ${index + 1}`}
+              number={`${index + 1 < 10 ? "0" : ""}${index + 1}`}
               text={feature}
             />
           ))}

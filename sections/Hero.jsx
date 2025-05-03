@@ -19,13 +19,13 @@ const Hero = () => (
       >
         {/* Text Section */}
         <div className="flex-2 text-center md:text-left px-2 sm:mt-[-190px]">
-          <h1 className="font-Poppins tracking-tighter font-medium text-4xl sm:text-6xl mb-1 p-2">
+          <h1 className="font-Poppins tracking-tighter font-medium text-[35px] sm:text-4xl sm:mb-1 sm:p-2 lg:text-6xl ">
             Post like Instagram,
           </h1>
-          <h1 className="font-Poppins tracking-tighter font-medium text-4xl sm:text-6xl mb-1 p-2">
+          <h1 className="font-Poppins tracking-tighter font-medium text-[33px] sm:mb-1 sm:p-2 sm:text-4xl lg:text-6xl whitespace-nowrap">
             Sell like a Marketplace.
           </h1>
-          <p className="font-Poppins text-[14px] sm:text-[20px] text-gray-800 m-1 p-2">
+          <p className="font-Poppins text-[14px] sm:mt-5 sm:text-[20px] text-gray-800 m-1 p-2">
             A content-driven marketplace for brands to engage and drive sales.
           </p>
           <button className="font-[Poppins] mt-3 bg-black text-white px-8 py-3 rounded-full text-lg hover:scale-105 hover:bg-black transition-transform duration-300 ease-in-out">
@@ -34,7 +34,7 @@ const Hero = () => (
         </div>
 
         {/* Image Section */}
-        <div className="flex-1 flex justify-center ">
+        <div className="flex-1 flex justify-center">
           <img
             src="heroui.png"
             alt="App Screenshot"

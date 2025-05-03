@@ -1,4 +1,5 @@
 import { Footer, Navbar } from "../components";
+import EmblaCarousel from "../components/EmblaCarousel";
 import {
   About,
   Explore,
@@ -9,13 +10,17 @@ import {
   WhatsNew,
   World,
 } from "../sections";
+import Features from "../sections/Features";
 
 const Home = () => (
   <div className="bg-primary-black overflow-hidden">
     <Navbar />
+
     <Hero />
     <div className="relative">
       <About />
+      <Features />
+
       <div className="gradient-03 z-0" />
       <Explore />
     </div>

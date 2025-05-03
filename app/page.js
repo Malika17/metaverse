@@ -1,4 +1,5 @@
 import { Footer, Navbar } from "../components";
+import { EmblaCarousel } from "../components/Carousel";
 
 import {
   About,
@@ -13,8 +14,9 @@ import {
 
 const Page = () => (
   <div className="bg-primary-white overflow-hidden">
-    {/* <Navbar /> */}
-    <Hero />
+    {/* <Navbar />
+    <EmblaCarousel /> */}
+    {/* <Hero /> */}
     <div className="relative">
       <About />
       <div className="gradient-03 z-0" />
