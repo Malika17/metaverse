@@ -1,5 +1,5 @@
 import { Footer, Navbar } from "../components";
-import EmblaCarousel from "../components/EmblaCarousel";
+
 import {
   About,
   Explore,

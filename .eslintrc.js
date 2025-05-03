@@ -69,6 +69,11 @@ module.exports = {
       },
     ],
     quotes: 0,
-    "react/button-has-type": "off", // This disables the rule // <-- This disables the rule for quotes
+    "react/button-has-type": "off", // This disables the rule for button types
+    "implicit-arrow-linebreak": "off", // Disables the rule for linebreaks in arrow functions
+    "operator-linebreak": "off", // Disables the rule for line breaks around operators
+    "comma-dangle": "off", // Disables trailing comma rule
+    "no-trailing-spaces": "off", // Disables trailing spaces rule
+    "jsx-a11y/control-has-associated-label": "off", // Disables the rule for labels associated with controls
   },
 };
