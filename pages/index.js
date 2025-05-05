@@ -2,7 +2,6 @@ import { Footer, Navbar } from "../components";
 
 import {
   About,
-  Explore,
   Feedback,
   GetStarted,
   Hero,
