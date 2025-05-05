@@ -109,11 +109,11 @@ const EmblaCarousel = ({ slides, options }) => {
 
                 {/* Phone Image */}
                 <div className="w-[70vw] max-w-[300px] md:max-w-[400px] aspect-[9/16] overflow-hidden rounded-2xl bg-white border-white">
-                  <div className="w-[350px] h-[700px] rounded-[3.5rem] overflow-hidden bg-white">
+                  <div className="sm:w-[350px]  aspect-[11/20] sm:h-[700px] rounded-[3rem] sm:rounded-[3.5em] overflow-hidden bg-white">
                     <img
                       src={slide.imageSrc}
                       alt={`Slide ${index + 1}`}
-                      className="object-cover w-full h-full rounded-2xl overflow-hidden"
+                      className="sm:object-contain object-co w-full h-full rounded-2xl overflow-hidden"
                     />
                   </div>
                 </div>
