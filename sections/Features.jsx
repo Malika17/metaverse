@@ -5,7 +5,7 @@ import { EmblaCarousel } from "../components";
 const Features = () => {
   const slides = [
     {
-      imageSrc: "heroUI.png",
+      imageSrc: "f1.gif",
       leftText: "Personalized feed based on your interests.",
       rightText: "Discover content from brands and creators you like.",
     },

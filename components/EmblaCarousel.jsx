@@ -108,20 +108,22 @@ const EmblaCarousel = ({ slides, options }) => {
                 </p>
 
                 {/* Phone Image */}
-                <div className="w-[70vw] max-w-[300px] md:max-w-[400px] aspect-[9/16] overflow-hidden rounded-2xl bg-white">
-                  <img
-                    src={slide.imageSrc}
-                    alt={`Slide ${index + 1}`}
-                    className="object-contain w-full h-full"
-                  />
+                <div className="w-[70vw] max-w-[300px] md:max-w-[400px] aspect-[9/16] overflow-hidden rounded-2xl bg-white border-white">
+                  <div className="w-[350px] h-[700px] rounded-[3.5rem] overflow-hidden bg-white">
+                    <img
+                      src={slide.imageSrc}
+                      alt={`Slide ${index + 1}`}
+                      className="object-cover w-full h-full rounded-2xl overflow-hidden"
+                    />
+                  </div>
                 </div>
 
                 {/* Desktop Text Block */}
                 <div className="hidden md:flex flex-col w-1/2 text-left pl-4">
-                  <p className="text-2xl md:text-5xl font-semibold text-black font-poppins leading-tight">
+                  <p className="text-2xl sm:m-2 sm:p-6 md:text-6xl font-semibold text-black font-poppins ">
                     {slide.leftText}
                   </p>
-                  <p className="text-xl md:text-3xl font-normal text-black font-poppins leading-snug mt-2">
+                  <p className="text-xl sm:m-2 sm:p-6 md:text-3xl font-normal text-black font-poppins mt-2">
                     {slide.rightText}
                   </p>
                 </div>
