@@ -22,7 +22,7 @@ const Home = () => (
       <Features />
 
       <div className="gradient-03 z-0" />
-      <Explore />
+      {/* <Explore /> */}
     </div>
     <div className="relative">
       <GetStarted />

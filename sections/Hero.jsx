@@ -38,7 +38,7 @@ const Hero = () => (
           <img
             src="heroui.png"
             alt="App Screenshot"
-            className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto md:max-h-[550px] lg:max-h-[650px] object-contain"
+            className="w-3/4 max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto md:max-h-[550px] lg:max-h-[650px] object-contain"
           />
         </div>
       </motion.div>
