@@ -107,8 +107,14 @@ const EmblaCarousel = ({ slides, options }) => {
                   {slide.leftText}
                 </p>
 
+<<<<<<< HEAD
                 <div className="w-[70vw] max-w-[300px] md:max-w-[400px]   aspect-[12/24] sm:aspect-[9/16] overflow-hidden rounded-2xl bg-white border-white">
                   <div className="sm:w-[350px]  aspect-[12/24] sm:h-[700px] rounded-[3rem] sm:rounded-[3.5em] overflow-hidden bg-white">
+=======
+                {/* Phone Image */}
+                <div className="w-[70vw] max-w-[300px] md:max-w-[400px] aspect-[9/16] overflow-hidden rounded-2xl bg-white border-white">
+                  <div className="sm:w-[350px]  aspect-[11/20] sm:h-[700px] rounded-[3rem] sm:rounded-[3.5em] overflow-hidden bg-white">
+>>>>>>> 6c71f8bb4804ee93a41f6839dc7f2d3bd1f2fd04
                     <img
                       src={slide.imageSrc}
                       alt={`Slide ${index + 1}`}
