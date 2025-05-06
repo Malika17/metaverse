@@ -119,7 +119,7 @@ const EmblaCarousel = ({ slides, options }) => {
 
                 {/* Desktop Text Block */}
                 <div className="hidden md:flex flex-col w-1/2 text-left pl-4">
-                  <p className="text-2xl sm:m-2 sm:p-6 md:text-6xl font-semibold text-black font-poppins ">
+                  <p className="text-2xl leading-loose sm:m-2 sm:p-6 md:text-6xl font-semibold text-black font-poppins ">
                     {slide.leftText}
                   </p>
                   <p className="text-xl sm:m-2 sm:p-6 md:text-3xl font-normal text-black font-poppins mt-2">

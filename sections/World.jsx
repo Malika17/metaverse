@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-import styles from '../styles';
-import { TitleText, TypingText } from '../components';
-import { fadeIn, staggerContainer } from '../utils/motion';
+import styles from "../styles";
+import { TitleText, TypingText } from "../components";
+import { fadeIn, staggerContainer } from "../utils/motion";
 
 const World = () => (
-  <section className={`${styles.paddings} relative z-10`}>
+  <section className={`${styles.paddings} mt-20 relative z-10`}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -15,19 +15,17 @@ const World = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
-
-      <TypingText title="| People on the World" textStyles="text-center" />
       <TitleText
-        title={(
-          <>Track friends around you and invite them to play together in the same
-            world
-          </>
-        )}
+        title={<>Explore, Engage and Shop</>}
         textStyles="text-center"
       />
+      <h1 className="text-center font-grey-900 m-2 sm:mt-10 sm:text-2xl text-[16px]">
+        Built to align with how consumers shop, Lore offers sellers a seamless,
+        intuitive platform for reaching their audience.
+      </h1>
 
       <motion.div
-        variants={fadeIn('up', 'tween', 0.3, 1)}
+        variants={fadeIn("up", "tween", 0.3, 1)}
         className="relative mt-[68px] flex w-full h-[550px]"
       >
         <img src="/map.png" alt="map" className="w-full h-full object-cover" />

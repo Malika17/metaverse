@@ -36,7 +36,7 @@ const GetStarted = () => (
         variants={fadeIn("left", "tween", 0.2, 1)}
         className=" flex-[0.75] flex justify-center text-center flex-col text-black"
       >
-        <TypingText title="| Why Sell on Lore?" />
+        <TypingText title=" Why Sell on Lore?" />
         {/* <TitleText title={<>Get Started in Just a Few Steps</>} /> */}
         <div className="mt-[31px] flex flex-col max-w-[700px] gap-[24px]">
           {sellerFeatures.map((feature, index) => (

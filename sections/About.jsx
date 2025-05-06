@@ -17,7 +17,7 @@ const About = () => (
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
       <TypingText
-        title="| About Lore"
+        title=" About Lore"
         textStyles="text-center text-black font-poppins"
       />
 

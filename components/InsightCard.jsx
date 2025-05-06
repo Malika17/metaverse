@@ -14,17 +14,9 @@ const InsightCard = ({ imgUrl, title, subtitle, index }) => (
         <h4 className="font-semibold lg:text-[40px] text-[24px] text-gray-900">
           {title}
         </h4>
-        <p className="mt-4 font-normal lg:text-[18px] text-[14px] text-gray-600">
+        <p className="mt-4 font-normal lg:text-[20px] text-[14px] text-gray-600">
           {subtitle}
         </p>
-      </div>
-
-      <div className="lg:flex hidden items-center justify-center w-[100px] h-[100px] rounded-full bg-transparent border border-gray-300">
-        <img
-          src="/arrow.svg"
-          alt="arrow"
-          className="w-[40%] h-[40%] object-contain"
-        />
       </div>
     </div>
 

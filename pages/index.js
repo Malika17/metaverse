@@ -1,4 +1,4 @@
-import { Footer, Navbar } from "../components";
+import { Navbar } from "../components";
 
 import { About, GetStarted, Hero, Insights, World } from "../sections";
 import Features from "../sections/Features";
@@ -26,7 +26,7 @@ const Home = () => (
       <div className="gradient-04 z-0" />
       {/* <Feedback /> */}
     </div>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 );
 
