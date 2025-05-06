@@ -10,22 +10,22 @@ const Features = () => {
       rightText: "Discover content from brands and creators you like.",
     },
     {
-      imageSrc: "/images/lore2.png",
+      imageSrc: "f2.gif",
       leftText: "Tap posts to view and buy products directly.",
       rightText: "Shop seamlessly from the content you engage with.",
     },
     {
-      imageSrc: "/images/lore3.png",
+      imageSrc: "f3.gif",
       leftText: "Learn the story behind each brand.",
       rightText: "Follow creators and explore their products.",
     },
     {
-      imageSrc: "/images/lore4.png",
+      imageSrc: "f4.gif",
       leftText: "Search products, posts, and brands easily.",
       rightText: "Find what you're looking for with personalized searches.",
     },
     {
-      imageSrc: "/images/lore5.png",
+      imageSrc: "f5.gif",
       leftText: "Add products to your cart directly from posts.",
       rightText: "Enjoy a fast and secure checkout experience.",
     },
