@@ -1,14 +1,6 @@
 import { Footer, Navbar } from "../components";
 
-import {
-  About,
-  Feedback,
-  GetStarted,
-  Hero,
-  Insights,
-  WhatsNew,
-  World,
-} from "../sections";
+import { About, GetStarted, Hero, Insights, World } from "../sections";
 import Features from "../sections/Features";
 
 const Home = () => (
@@ -26,13 +18,13 @@ const Home = () => (
     <div className="relative">
       <GetStarted />
       <div className="gradient-04 z-0" />
-      <WhatsNew />
+      {/* <WhatsNew /> */}
     </div>
+    <Insights />
     <World />
     <div className="relative">
-      <Insights />
       <div className="gradient-04 z-0" />
-      <Feedback />
+      {/* <Feedback /> */}
     </div>
     <Footer />
   </div>
