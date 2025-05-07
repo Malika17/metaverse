@@ -102,24 +102,27 @@ const EmblaCarousel = ({ slides, options }) => {
               key={index}
             >
               <div className="embla__slide__tween transition-transform duration-[900ms] ease-out flex flex-col md:flex-row items-center justify-center w-full max-w-[90rem] gap-6 px-4 text-center">
-                {/* Mobile Heading (Above Image) */}
+                {/* Mobile Heading */}
                 <p className="block md:hidden text-xl font-semibold text-black font-poppins leading-snug">
                   {slide.leftText}
                 </p>
 
-                <div className="w-[70vw] max-w-[300px] md:max-w-[400px]   aspect-[12/24] sm:aspect-[9/16] overflow-hidden rounded-2xl bg-white border-white">
-                  <div className="sm:w-[350px]  aspect-[12/24] sm:h-[700px] rounded-[3rem] sm:rounded-[3.5em] overflow-hidden bg-white">
-                    <img
-                      src={slide.imageSrc}
-                      alt={`Slide ${index + 1}`}
-                      className="sm:object-contain object-co w-full h-full rounded-2xl overflow-hidden"
+                <div className="w-[70vw] max-w-[300px] md:max-w-[400px] aspect-[12/24] sm:aspect-[9/16] overflow-hidden rounded-2xl bg-white border-white">
+                  <div className="sm:w-[350px] aspect-[12/24] sm:h-[700px] rounded-[3rem] sm:rounded-[3.5em] overflow-hidden bg-white">
+                    <video
+                      src={slide.videoSrc}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="sm:object-contain object-cover w-full h-full rounded-2xl overflow-hidden"
                     />
                   </div>
                 </div>
 
                 {/* Desktop Text Block */}
                 <div className="hidden md:flex flex-col w-1/2 text-left pl-4">
-                  <p className="text-2xl leading-loose sm:m-2 sm:p-6 md:text-6xl font-semibold text-black font-poppins ">
+                  <p className="text-2xl leading-loose sm:m-2 sm:p-6 md:text-6xl font-semibold text-black font-poppins">
                     {slide.leftText}
                   </p>
                   <p className="text-xl sm:m-2 sm:p-6 md:text-3xl font-normal text-black font-poppins mt-2">
@@ -127,7 +130,7 @@ const EmblaCarousel = ({ slides, options }) => {
                   </p>
                 </div>
 
-                {/* Mobile Caption (Below Image) */}
+                {/* Mobile Caption */}
                 <p className="block md:hidden text-lg text-black font-poppins leading-snug">
                   {slide.rightText}
                 </p>
