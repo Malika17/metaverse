@@ -116,10 +116,7 @@ const EmblaCarousel = ({ slides, options }) => {
                       playsInline
                       className="w-full h-auto object-cover rounded-xl"
                     >
-                      <source
-                        src="https://res.cloudinary.com/drx7etx5m/video/upload/f_auto:video,q_auto/n9datnbtnxeewx5tddny"
-                        type="video/mp4"
-                      />
+                      <source src={slide.videoSrc} type="video/mp4" />
                     </video>
                   </div>
                 </div>
