@@ -5,7 +5,7 @@ import { EmblaCarousel } from "../components";
 const Features = () => {
   const slides = [
     {
-      videoSrc: "/videos/f1new.mp4",
+      videoSrc: "/videos/f1_ios.mp4",
       leftText: "Personalized feed based on your interests.",
       rightText: "Discover content from brands and creators you like.",
     },

@@ -110,14 +110,17 @@ const EmblaCarousel = ({ slides, options }) => {
                 <div className="w-[70vw] max-w-[300px] md:max-w-[400px] aspect-[12/24] sm:aspect-[9/16] overflow-hidden rounded-2xl bg-white border-white">
                   <div className="sm:w-[350px] aspect-[12/24] sm:h-[700px] rounded-[3rem] sm:rounded-[3.5em] overflow-hidden bg-white">
                     <video
-                      src={slide.videoSrc}
                       autoPlay
-                      muted
                       loop
+                      muted
                       playsInline
-                      preload="auto"
-                      className="w-full h-full object-cover"
-                    />
+                      className="w-full h-auto object-cover rounded-xl"
+                    >
+                      <source
+                        src="https://res.cloudinary.com/drx7etx5m/video/upload/f_auto:video,q_auto/n9datnbtnxeewx5tddny"
+                        type="video/mp4"
+                      />
+                    </video>
                   </div>
                 </div>
 
