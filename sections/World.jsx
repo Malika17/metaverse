@@ -26,23 +26,19 @@ const World = () => (
 
       <motion.div
         variants={fadeIn("up", "tween", 0.3, 1)}
-        className="relative mt-[68px] flex w-full h-[900px]"
+        className="relative mt-[68px] w-full h-[60vh] sm:h-[80vh] md:h-[90vh] lg:h-[900px]"
       >
-        <img
-          src="/map4.png"
-          alt="map"
-          className="w-full sm:h-[900px] object-cover"
-        />
+        <img src="/map4.png" alt="map" className="w-full h-full object-cover" />
 
-        <div className="absolute bottom-[250px] right-[710px] w-[70px] h-[70px] p-[6px] rounded-full bg-[#5D6680]">
+        <div className="absolute bottom-[20%] right-[60%] w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] p-[6px] rounded-full bg-[#5D6680]">
           <img src="people-01.png" alt="people" className="w-full h-full" />
         </div>
 
-        <div className="absolute top-[220px] left-[450px] w-[70px] h-[70px] p-[6px] rounded-full bg-[#5D6680]">
+        <div className="absolute top-[25%] left-[15%] w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] p-[6px] rounded-full bg-[#5D6680]">
           <img src="/people-02.png" alt="people" className="w-full h-full" />
         </div>
 
-        <div className="absolute top-[350px] left-[54%] w-[70px] h-[70px] p-[6px] rounded-full bg-[#5D6680]">
+        <div className="absolute top-[40%] left-[54%] w-[50px] h-[50px] sm:w-[70px] sm:h-[70px] p-[6px] rounded-full bg-[#5D6680]">
           <img src="people-03.png" alt="people" className="w-full h-full" />
         </div>
       </motion.div>
