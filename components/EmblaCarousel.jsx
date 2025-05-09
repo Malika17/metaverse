@@ -112,10 +112,11 @@ const EmblaCarousel = ({ slides, options }) => {
                     <video
                       src={slide.videoSrc}
                       autoPlay
-                      loop
                       muted
+                      loop
                       playsInline
-                      className="sm:object-contain object-cover w-full h-full rounded-2xl overflow-hidden"
+                      preload="auto"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
