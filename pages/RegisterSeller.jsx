@@ -1,4 +1,3 @@
-// pages/register-seller.jsx
 import { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../utils/firebase.js";
@@ -22,12 +21,18 @@ const RegisterSeller = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Show the success message immediately
+    setSuccess(true);
+
     try {
+      // Submit form data to Firebase
       await addDoc(collection(db, "sellerLeads"), {
         ...form,
         createdAt: serverTimestamp(),
       });
-      setSuccess(true);
+
+      // Reset the form after successful submission
       setForm({
         name: "",
         phone: "",
@@ -40,6 +45,9 @@ const RegisterSeller = () => {
     } catch (err) {
       console.error("Error submitting form: ", err);
     }
+
+    // Optionally, hide the success message after a few seconds
+    setTimeout(() => setSuccess(false), 3000);
   };
 
   return (
@@ -54,8 +62,6 @@ const RegisterSeller = () => {
         as it's ready. Thank you so much for your patience and interest!
       </p>
       <div className="max-w-xl sm:w-1/2 border border-black bg-gray-50">
-        {/* Heading with increased font size */}
-
         {/* Success message */}
         {success && (
           <p className="mb-4 text-green-600 text-center">
