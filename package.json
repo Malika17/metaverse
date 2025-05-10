@@ -12,6 +12,7 @@
   "dependencies": {
     "embla-carousel-react": "^8.6.0",
     "eslint-config-next": "13.0.3",
+    "firebase": "^11.7.1",
     "framer-motion": "^7.6.7",
     "next": "13.0.3",
     "next-cloudinary": "^6.16.0",

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import styles from "../styles";
 import { slideIn, staggerContainer } from "../utils/motion";
+import Link from "next/link";
 
 const Hero = () => (
   <section className={`${styles.yPaddings} ${styles.heroGradient}`}>
@@ -29,7 +30,7 @@ const Hero = () => (
             A content-driven marketplace for brands to engage and drive sales.
           </p>
           <button className="font-[Poppins] mt-3 bg-black text-white px-8 py-3 rounded-full text-lg hover:scale-105 hover:bg-black transition-transform duration-300 ease-in-out">
-            Join as a Seller
+            <Link href="/RegisterSeller">Join as a Seller</Link>
           </button>
         </div>
 
