@@ -51,20 +51,20 @@ const RegisterSeller = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white font-[Poppins] p-8 m-8">
+    <div className="flex flex-col space-between gap-10 items-center justify-center bg-white font-[Poppins] p-8 m-8">
       <TitleText
         title={<>Pre-register as a Seller</>}
-        textStyles="mt-10 text-center text-2xl sm:text-3xl md:text-4xl"
+        textStyles="mt-2 text-center text-2xl md:text-4xl"
       />
-
-      <p className="text-gray-600 text-sm text-center p-4 mb-8">
+      <p className="mt-4 sm:mt-[100px] text-gray-600 text-sm text-center p-4">
         We're working hard to bring this app to life! We'll be in touch as soon
         as it's ready. Thank you so much for your patience and interest!
       </p>
-      <div className="max-w-xl sm:w-1/2 border border-black bg-gray-50">
+
+      <div className=" sm:w-1/2 mt-10 border border-black bg-gray-50">
         {/* Success message */}
         {success && (
-          <p className="mb-4 text-green-600 text-center">
+          <p className="mb-4 mt-4 text-green-600 text-center">
             Thank you! We’ll contact you soon.
           </p>
         )}
@@ -72,7 +72,7 @@ const RegisterSeller = () => {
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="h-auto w-[1/2] space-y-4 sm:mt-20 "
+          className="h-auto sm:w-[1/2] space-y-4 sm:mt-10 "
         >
           <input
             name="name"
