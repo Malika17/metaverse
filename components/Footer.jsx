@@ -1,61 +1,147 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { socials } from '../constants';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { supabase } from "../utils/supabaseClient";
+import styles from "../styles";
+import { footerVariants } from "../utils/motion";
 
-import styles from '../styles';
-import { footerVariants } from '../utils/motion';
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-const Footer = () => (
-  <motion.footer
-    variants={footerVariants}
-    initial="hidden"
-    whileInView="show"
-    className={`${styles.xPaddings} py-8 relative`}
-  >
-    <div className="footer-gradient" />
-    <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
-      <div className="flex items-center justify-between flex-wrap gap-5">
-        <h4 className="font-bold md:text-[64px] text-[44px] text-white">
-          Enter the Metaverse
-        </h4>
-        <button type="button" className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px]">
-          <img
-            src="/headset.svg"
-            alt="headset"
-            className="w-[24px] h-[24px] object-contain"
-          />
-          <span className="font-normal text-[16px] text-white">
-            Enter Metaverse
-          </span>
-        </button>
-      </div>
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
-      <div className="flex flex-col">
-        <div className="mb-[50px] h-[2px] bg-white opacity-10" />
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <h4 className="font-extrabold text-[24px] text-white">
-            METAVERUS
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
+
+    const { name, email, message } = formData;
+
+    const { error: supabaseError } = await supabase
+      .from("contact_table")
+      .insert([{ name, email, message }]);
+
+    setLoading(false);
+
+    if (supabaseError) {
+      setError("There was an error submitting the form.");
+    } else {
+      setSuccess("Your message has been submitted successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    }
+  };
+
+  return (
+    <motion.section
+      id="footer"
+      variants={footerVariants}
+      initial="hidden"
+      whileInView="show"
+      className={`${styles.xPaddings} py-8 relative bg-black flex justify-center items-center`}
+    >
+      <div className="footer-gradient" />
+      <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
+        <div className="flex flex-col items-center gap-5">
+          <h4 className="font-bold md:text-[64px] text-[44px] text-white">
+            Get in Touch
           </h4>
-          <p className="font-normal text-[14px] text-white opacity-50">
-            Copyright © 2021 - 2022 Metaversus. All rights reserved.
+          <p className="text-center font-normal text-[16px] text-white opacity-70">
+            We're here to help. Reach out to us via the form below or through
+            any of the contact options.
           </p>
-
-          <div className="flex gap-4">
-            {socials.map((social) => (
-              <img
-                key={social.name}
-                src={social.url}
-                alt={social.name}
-                className="w-[24px] h-[24px] object-contain cursor-pointer"
-              />
-            ))}
-          </div>
         </div>
-      </div>
-    </div>
-  </motion.footer>
-);
 
-export default Footer;
+        <div className="flex flex-col gap-8">
+          {success && <p className="text-green-500 text-center">{success}</p>}
+          {error && <p className="text-red-500 text-center">{error}</p>}
+
+          <form
+            onSubmit={handleSubmit}
+            className="w-full max-w-md mx-auto space-y-4"
+          >
+            <div className="flex flex-col">
+              <label htmlFor="name" className="text-white">
+                Your Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+                className="p-4 rounded-[10px] text-black"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <label htmlFor="email" className="text-white">
+                Your Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+                className="p-4 rounded-[10px] text-black"
+              />
+            </div>
+
+            <div className="flex flex-col">
+              <label htmlFor="message" className="text-white">
+                Your Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Enter your message"
+                rows="4"
+                className="p-4 rounded-[10px] text-black"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-4 px-6 bg-[#25618B] rounded-[32px] text-white font-bold"
+              disabled={loading}
+            >
+              {loading ? "Submitting..." : "Send Message"}
+            </button>
+          </form>
+        </div>
+
+        <div className="mt-4 text-center">
+          <p className="text-white sm:text-[2em]">
+            Reach us at <br />
+            loreappmarketplace@gmail.com
+          </p>
+        </div>
+
+        <div className="mt-10 flex justify-between items-center text-white" />
+      </div>
+    </motion.section>
+  );
+};
+
+export default Contact;
