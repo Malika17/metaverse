@@ -1,17 +1,16 @@
 import { useState } from "react";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "../utils/firebase.js";
+import { supabase } from "../utils/supabaseClient.js";
 import { TitleText } from "../components/CustomTexts.jsx";
 
 const RegisterSeller = () => {
   const [form, setForm] = useState({
-    name: "",
+    fullname: "",
     phone: "",
     email: "",
     brandName: "",
-    instagram: "",
+    instaURL: "",
     website: "",
-    productLine: "",
+    desc: "",
   });
 
   const [success, setSuccess] = useState(false);
@@ -21,32 +20,36 @@ const RegisterSeller = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Show the success message immediately
     setSuccess(true);
 
     try {
-      // Submit form data to Firebase
-      await addDoc(collection(db, "sellerLeads"), {
-        ...form,
-        createdAt: serverTimestamp(),
-      });
+      const { error } = await supabase.from("seller_leads").insert([
+        {
+          fullname: form.fullname,
+          phone: form.phone,
+          email: form.email,
+          brand_name: form.brandName,
+          instaURL: form.instaURL,
+          website: form.website,
+          desc: form.desc,
+        },
+      ]);
 
-      // Reset the form after successful submission
+      if (error) throw error;
+
       setForm({
-        name: "",
+        fullname: "",
         phone: "",
         email: "",
         brandName: "",
-        instagram: "",
+        instaURL: "",
         website: "",
-        productLine: "",
+        desc: "",
       });
     } catch (err) {
-      console.error("Error submitting form: ", err);
+      console.error("Error submitting form: ", err.message);
     }
 
-    // Optionally, hide the success message after a few seconds
     setTimeout(() => setSuccess(false), 3000);
   };
 
@@ -61,35 +64,32 @@ const RegisterSeller = () => {
         as it's ready. Thank you so much for your patience and interest!
       </p>
 
-      <div className=" sm:w-1/2 mt-10 border border-black bg-gray-50">
-        {/* Success message */}
+      <div className="sm:w-1/2 mt-10 border border-black bg-gray-50">
         {success && (
           <p className="mb-4 mt-4 text-green-600 text-center">
             Thank you! We’ll contact you soon.
           </p>
         )}
 
-        {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="h-auto sm:w-[1/2] space-y-4 sm:mt-10 "
+          className="h-auto sm:w-[1/2] space-y-4 sm:mt-10"
         >
           <input
-            name="name"
+            name="fullname"
             placeholder="Full Name"
             required
-            value={form.name}
+            value={form.fullname}
             onChange={handleChange}
-            className="w-full border border-gray-300 bg-gray-100 px-4 py-2 rounded m-2 "
+            className="w-full border border-gray-300 bg-gray-100 px-4 py-2 rounded m-2"
           />
-
           <input
             name="phone"
             placeholder="Phone Number"
             required
             value={form.phone}
             onChange={handleChange}
-            className="w-full border border-gray-300 px-4 py-2 rounded m-2 focus:outline-none focus:border-purple-300"
+            className="w-full border border-gray-300 px-4 py-2 rounded m-2"
           />
           <input
             name="email"
@@ -98,42 +98,42 @@ const RegisterSeller = () => {
             required
             value={form.email}
             onChange={handleChange}
-            className="w-full border border-gray-300 px-4 py-2 rounded m-2 focus:outline-none focus:border-purple-300"
+            className="w-full border border-gray-300 px-4 py-2 rounded m-2"
           />
           <input
             name="brandName"
             placeholder="Brand Name"
             value={form.brandName}
             onChange={handleChange}
-            className="w-full border border-gray-300 px-4 py-2 rounded m-2 focus:outline-none focus:border-purple-300"
+            className="w-full border border-gray-300 px-4 py-2 rounded m-2"
           />
           <input
-            name="instagram"
-            placeholder="Instagram Handle (for business)"
+            name="instaURL"
+            placeholder="Instagram URL"
             required
-            value={form.instagram}
+            value={form.instaURL}
             onChange={handleChange}
-            className="w-full border border-gray-300 px-4 py-2 rounded m-2 focus:outline-none focus:border-purple-300"
+            className="w-full border border-gray-300 px-4 py-2 rounded m-2"
           />
           <input
             name="website"
             placeholder="Business Website (if any)"
             value={form.website}
             onChange={handleChange}
-            className="w-full border border-gray-300 px-4 py-2 rounded m-2 focus:outline-none focus:border-purple-300"
+            className="w-full border border-gray-300 px-4 py-2 rounded m-2"
           />
           <input
-            name="productLine"
+            name="desc"
             placeholder="What do you sell? (One-liner)"
             required
-            value={form.productLine}
+            value={form.desc}
             onChange={handleChange}
-            className="w-full border border-gray- px-4 py-2 rounded m-2 focus:outline-none focus:border-purple-300"
+            className="w-full border border-gray-300 px-4 py-2 rounded m-2"
           />
-          <div className="mt-15 w-full h-full flex justify-center">
+          <div className="w-full h-full flex justify-center">
             <button
               type="submit"
-              className="w-[200px] mx-auto font-[Poppins] mt-3 bg-black text-white px-8 py-3 rounded-full text-lg hover:scale-105 hover:bg-black transition-transform duration-300 ease-in-out"
+              className="w-[200px] font-[Poppins] mt-3 bg-black text-white px-8 py-3 rounded-full text-lg hover:scale-105 transition-transform duration-300"
             >
               Submit
             </button>
@@ -143,4 +143,5 @@ const RegisterSeller = () => {
     </div>
   );
 };
+
 export default RegisterSeller;
