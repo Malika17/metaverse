@@ -29,9 +29,26 @@ const Hero = () => (
           <p className="font-Poppins text-[14px] sm:mt-5 sm:text-[20px] text-gray-800 m-1 p-2">
             A content-driven marketplace for brands to engage and drive sales.
           </p>
-          <button className="font-[Poppins] mt-3 bg-black text-white px-8 py-3 rounded-full text-lg hover:scale-105 hover:bg-black transition-transform duration-300 ease-in-out">
-            <Link href="/RegisterSeller">Join as a Seller</Link>
-          </button>
+
+          <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-4 mt-3">
+            {/* Seller Button */}
+            <button className="font-[Poppins] bg-black text-white px-8 py-3 rounded-full text-lg hover:scale-105 hover:bg-black transition-transform duration-300 ease-in-out">
+              <Link href="/RegisterSeller">Join as a Seller</Link>
+            </button>
+
+            {/* Consumer Early Access Button */}
+            <button
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLScNtZCXEYd_0OOFX1PDtRF3fe9WXIFNgY19w2dBgsKgsk9X3Q/viewform?usp=sharing&ouid=116675347423943131269",
+                  "_blank"
+                )
+              }
+              className="font-[Poppins] border border-black text-black px-8 py-3 rounded-full text-lg hover:scale-105 hover:bg-black hover:text-white transition-transform duration-300 ease-in-out"
+            >
+              Join Early Access
+            </button>
+          </div>
         </div>
 
         {/* Image Section */}
