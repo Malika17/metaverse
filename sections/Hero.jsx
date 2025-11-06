@@ -32,8 +32,11 @@ const Hero = () => (
 
           <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-4 mt-3">
             {/* Seller Button */}
-            <button className="font-[Poppins] bg-black text-white px-8 py-3 rounded-full text-lg hover:scale-105 hover:bg-black transition-transform duration-300 ease-in-out">
-              <Link href="/RegisterSeller">Join as a Seller</Link>
+            <button
+              onClick={() => window.open("https://loreshop.in", "_blank")}
+              className="font-[Poppins] bg-black text-white px-8 py-3 rounded-full text-lg hover:scale-105 hover:bg-black transition-transform duration-300 ease-in-out"
+            >
+              Join as a Seller
             </button>
 
             {/* Consumer Early Access Button */}
