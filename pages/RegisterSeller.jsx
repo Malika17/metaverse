@@ -64,7 +64,7 @@ const RegisterSeller = () => {
         as it's ready. Thank you so much for your patience and interest!
       </p>
 
-      <div className="sm:w-1/2 mt-10 border border-black bg-gray-50">
+      <div className="sm:w-1/2 mt-10 border  bg-gray-50">
         {success && (
           <p className="mb-4 mt-4 text-green-600 text-center">
             Thank you! We’ll contact you soon.
